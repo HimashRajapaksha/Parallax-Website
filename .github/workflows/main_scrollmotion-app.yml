@@ -36,3 +36,5 @@ jobs:
           app-name: 'scrollmotion-app'  # Your Azure Web App name
           slot-name: 'production'  # Deployment slot
           package: './'  # Path to your static files (HTML, CSS, JS files)
+
+#himashtesting1
