@@ -18,7 +18,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 50px;
+    padding: 1.25rem 3.125rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +26,7 @@ header {
 }
 
 .logo {
-    font-size: 1.8em;
+    font-size: 1.8rem;
     color: #359381;
     pointer-events: none;
 }
@@ -34,9 +34,9 @@ header {
 .navigation a {
     text-decoration: none;
     color: #359381;
-    padding: 6px 15px;
+    padding: 0.375rem 1rem;
     border-radius: 20px;
-    margin: 0 5px;
+    margin: 0 0.3125rem;
     font-weight: 600;
 }
 
@@ -50,17 +50,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
 }
 
-#text {
-    position: absolute;
-    font-size: 4em;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
-    transition: transform 0.5s ease-out;
-}
-
+/* Parallax images styling */
 .parallax img {
     position: absolute;
     top: 0;
@@ -70,100 +64,72 @@ header {
     transition: transform 0.5s ease-out;
 }
 
+#text {
+    position: absolute;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    transition: transform 0.5s ease-out;
+    z-index: 10;
+}
+
 .sec {
     position: relative;
     background: #003329;
-    padding: 80px 20px;
+    padding: 5rem 2rem;
     text-align: center;
 }
 
 .sec h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .sec p {
-    font-size: 1em;
+    font-size: 1rem;
     color: #fff;
     font-weight: 300;
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Responsive Styles */
-
-@media (min-width: 768px) {
-    header {
-        padding: 30px 100px;
-    }
-
-    .logo {
-        font-size: 2em;
-    }
-
-    .navigation a {
-        margin: 0 10px;
+/* Mobile view adjustments */
+@media (max-width: 767px) {
+    .parallax {
+        height: 80vh; /* Reduce parallax section height on mobile */
     }
 
     #text {
-        font-size: 5em;
+        font-size: 3rem; /* Smaller text size on mobile */
+    }
+
+    .parallax img {
+        max-width: 120%; /* Allow images to expand slightly but not overflow */
     }
 
     .sec {
-        padding: 100px 50px;
-        text-align: left;
-    }
-
-    .sec h2 {
-        font-size: 3em;
+        padding: 50px 20px; /* Reduce padding in sec section for mobile */
     }
 }
-
 @media (min-width: 1024px) {
     header {
-        padding: 30px 150px;
+        padding: 1.875rem 9.375rem;
     }
 
     .logo {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .navigation a {
-        margin: 0 15px;
+        margin: 0 1rem;
     }
 
     .sec h2 {
-        font-size: 3.5em;
+        font-size: 3.5rem;
     }
 
     .sec p {
-        font-size: 1.1em;
+        font-size: 1.1rem;
     }
 }
-/* General styles, fonts, and responsive layout */
-
-.about {
-    background: #ffffff;
-    padding: 80px 20px;
-    text-align: center;
-    color: #333;
-}
-
-.parallax.continuation {
-    background: #e8f5e9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-#text-continuation {
-    position: absolute;
-    font-size: 4em;
-    color: #4caf50;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
-    transition: transform 0.5s ease-out;
-}
-
-/* Responsive adjustments from earlier */
