@@ -16,25 +16,19 @@ jobs:
       contents: read #This is required for actions/checkout
 
     steps:
-      # Step 1: Checkout your code from GitHub repository
       - uses: actions/checkout@v4
 
-      # Step 2: Log in to Azure using Azure login action
       - name: Log in to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E0778B9AE6B94624AFB3FD184E1FE20B }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1B92CD017CED4CC793CAA44C544EFD5F }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_313D75EBBCB641C78B02636E386087FE }}
-          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}  # Make sure this secret is also set in GitHub
 
-      # Step 3: Deploy to Azure Web App (Static site)
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'scrollmotion-app'  # Your Azure Web App name
-          slot-name: 'production'  # Deployment slot
-          package: './'  # Path to your static files (HTML, CSS, JS files)
-
-#himashtesting1
+          app-name: 'scrollmotion-app'
+          slot-name: 'production'
+          package: './'  # Deploy the entire project folder (static HTML, CSS, JS files)
